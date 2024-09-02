@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
+
 const session = require("express-session");
 const FileStore = require('express-session-file-store'); //to store sessions on fileSystem
+
 const fs = require('fs');
 router.use(express.static(path.join(__dirname, "public")));
 router.use(express.urlencoded({ extended: true }));

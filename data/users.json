@@ -6,6 +6,9 @@
     "user2": {
         "password": "456",
         "name": "John"
-    
+    },
+    "gokul": {
+        "password": "345",
+        "name": "gokul"
     }
 }

@@ -1,6 +1,6 @@
 <%- include('../includes/head.ejs') %>
 
-<link rel="stylesheet" href="/css/std_attendance.css">
+<link rel="stylesheet" href="/css/attendance.css">
 
 </head>
 
@@ -9,11 +9,11 @@
 
   <% for (let name in students) { %>
     <% if (students[name].rollno) { %>
-  <main>
+  <!-- <main> -->
 
    
-        <div class="list">
-          <ul >
+        <div class="attendance-card">
+          <ul style="list-style-type: none;">
             <h3> Name : <%= name %></h3>
             <li> Roll number : <%= students[name].rollno %></li>
             <li> Attended : <%= students[name].attended %></li>
@@ -22,7 +22,7 @@
           </ul>
         </div>
       
-  </main>
+  <!-- </main> -->
   <% } %>
    <% } %>
     

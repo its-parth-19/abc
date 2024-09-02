@@ -1,14 +1,68 @@
 {
     "Arun": {
-        "rollno": "22"
+        "rollno": "22",
+        "dob": "2004-03-01",
+        "email": "Anonymous675z09@gmail.com",
+        "mobno": "231311",
+        "gender": "Male",
+        "father": "Papa",
+        "mother": "Mummy",
+        "bldgrp": "O",
+        "city": "Ludhiana",
+        "state": "Punjab",
+        "nat": "India"
     },
     "Varun": {
-        "rollno": "23"
+        "rollno": "23",
+        "dob": "2004-03-01",
+        "email": "Anonymous675z09@gmail.com",
+        "mobno": "231311",
+        "gender": "Male",
+        "father": "Papa",
+        "mother": "Mummy",
+        "bldgrp": "O",
+        "city": "Ludhiana",
+        "state": "Punjab",
+        "nat": "India"
     },
     "Raj": {
-        "rollno": "24"
+        "rollno": "24",
+        "dob": "2004-03-01",
+        "email": "Anonymous675z09@gmail.com",
+        "mobno": "231311",
+        "gender": "Male",
+        "father": "Papa",
+        "mother": "Mummy",
+        "bldgrp": "O",
+        "city": "Ludhiana",
+        "state": "Punjab",
+        "nat": "India"
     },
     "Rajesh": {
-        "rollno": "25"
+        "rollno": "25",
+        "dob": "2004-03-01",
+        "email": "Anonymous675z09@gmail.com",
+        "mobno": "231311",
+        "gender": "Male",
+        "father": "Papa",
+        "mother": "Mummy",
+        "bldgrp": "O",
+        "city": "Ludhiana",
+        "state": "Punjab",
+        "nat": "India"
+    },
+    "gokul": {
+        "name": "gokul",
+        "rollno": "629",
+        "dob": "2004-03-01",
+        "email": "Anonymous675z09@gmail.com",
+        "mobno": "231311",
+        "gender": "Male",
+        "father": "Papa",
+        "mother": "Mummy",
+        "bldgrp": "O",
+        "city": "Ludhiana",
+        "state": "Punjab",
+        "nat": "India"
     }
 }

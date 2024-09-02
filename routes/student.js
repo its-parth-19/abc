@@ -4,37 +4,31 @@ const router = express.Router();
 
 const Student = require("../models/student");
 
-router.get("/", (request, response) => {
-  response.render("student/home", {pageTitle : "Home", path : "/", user:request.session.user});
-})
+router.get("/student/:name", (request, response) => {
 
-router.get("/student", (request, response) => {
+  Student.fetchStudentDetails( (students) => {
 
-  response.render("student/info", {pageTitle : "Student", path : "/student", user:request.session.user});
+    response.render("student/info", {pageTitle : "Student page", path : "/student", user : request.session.user, students : students});
+
+  })
 
 })
 
 router.get("/register", (request, response) => {
-  response.render("student/register", {pageTitle : "Registration page", path : "/student", user:request.session.user});
+  response.render("student/register", {pageTitle : "Registration Form", path : "/student", user:request.session.user});
 })
 
 router.post("/register", (request, response) => {
 
-  const {name, rollno} = request.body;
+  const {name, rollno, dob, email, mobno, gender, father, mother, bldgrp, city, state, nat} = request.body;
 
-  Student.addStudentDetail(name, rollno);
+  Student.addStudentDetail(name, rollno, dob, email, mobno, gender, father, mother, bldgrp, city, state, nat);
 
-  // response.redirect("/registered/name/" + name + "/rollno/" + rollno);
-
-  response.redirect("/");
+  response.redirect(`/student/${name}`);
 
 })
 
-router.get("/attendance", (request, response) => {
-  response.render("student/attendance", {pageTitle : "Attendance", path : "/attendance", students : {},user:request.session.user});
-})
-
-router.get("/attendance/name/:name", (request, response) => {
+router.get("/attendance/:name", (request, response) => {
 
   const {name} = request.params;
 

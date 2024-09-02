@@ -6,7 +6,7 @@ const p2 = path.join(__dirname, "../data/attendance-list.json");
 
 module.exports = class Student{
 
-  static addStudentDetail(name, rollno) {
+  static addStudentDetail(name, rollno, dob, email, mobno, gender, father, mother, bldgrp, city, state, nat) {
 
     fs.readFile(p1, (error, fileContent) => {
 
@@ -14,7 +14,7 @@ module.exports = class Student{
 
       if (!error) students = JSON.parse(fileContent);
       
-      students[name] = { rollno : rollno};
+      students[name] = { name, rollno, dob, email, mobno, gender, father, mother, bldgrp, city, state, nat};
 
       fs.writeFile(p1, JSON.stringify(students, null, 4), (error) => {
         if (!error) console.log("Student detail added");
@@ -27,6 +27,18 @@ module.exports = class Student{
   static fetchStudentAttendance(callBack) {
 
     fs.readFile(p2, (error, fileContent) => {
+
+      if (!error) callBack(JSON.parse(fileContent));
+
+      else callBack({});
+
+    });
+
+  }
+
+  static fetchStudentDetails(callBack) {
+
+    fs.readFile(p1, (error, fileContent) => {
 
       if (!error) callBack(JSON.parse(fileContent));
 

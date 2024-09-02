@@ -35,4 +35,12 @@ router.get("/student", (request, response) => {
   });
 })
 
+router.get("/performance", (request, response) => {
+  response.render("admin/performance", {pageTitle : "Performance", path : "/admin/performance", user:request.session.user});
+})
+
+router.get("/contact", (request, response) => {
+  response.render("admin/contact", {pageTitle : "Contact Us", path : "/admin/contact", user:request.session.user});
+})
+
 module.exports = router;

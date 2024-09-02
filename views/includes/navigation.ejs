@@ -4,9 +4,9 @@
   <ul class="nav-list">
     <li><a href="/" class = " <%= path === '/' ? 'active' : '' %> ">Home</a></li>
 
-    <li><a href="/student" class=" <%= path === '/student' ? 'active' : '' %> ">Student Info</a></li>
+    <li><a href="/student/<%= user.name %>" class=" <%= path === '/student' ? 'active' : '' %> ">Student Info</a></li>
 
-    <li><a href="/attendance" class=" <%= path === '/attendance' ? 'active' : '' %> ">Attendance</a></li>
+    <li><a href="/attendance/<%= user.name %>" class=" <%= path === '/attendance' ? 'active' : '' %> ">Attendance</a></li>
 
     <li><a href="/performance" class=" <%= path === '/performance' ? 'active' : '' %> ">Performance</a></li>
 
