@@ -1,0 +1,63 @@
+<%- include('../includes/head.ejs') %>
+
+<link rel="stylesheet" href="/css/std_attendance.css">
+
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <h1 id="Attendance">Attendance</h1>
+
+  <main>
+
+    <% if (Object.keys(students).length !== 0) { %>
+
+      <div class="attendance-card">
+        <h3>Subject</h3>
+        <p><strong>Name :</strong> <%= name %> </p>
+        <p><strong>Roll Number :</strong> <%= students[name].rollno %> </p>
+        <p><strong>Attended :</strong> <%= students[name].attended %> </p>
+        <p><strong>Absent :</strong> <%= students.delivered - students[name].attended %> </p>
+        <p><strong>Delivered :</strong> <%= students.delivered %></p>
+        <p><strong>Total Percentage :</strong> <%= students[name].percentage + "%" %> </p>
+      </div>
+
+      <!-- <div class="attendance-card">
+        <h3>Subject</h3>
+        <p><strong>Name :</strong> <%= name %> </p>
+        <p><strong>Roll Number :</strong> <%= students[name].rollno %> </p>
+        <p><strong>Attended :</strong> <%= students[name].attended %> </p>
+        <p><strong>Absent :</strong> <%= students.delivered - students[name].attended %> </p>
+        <p><strong>Delivered :</strong> <%= students.delivered %></p>
+        <p><strong>Total Percentage :</strong> <%= students[name].percentage %> </p>
+      </div>
+
+      <div class="attendance-card">
+        <h3>Subject</h3>
+        <p><strong>Name :</strong> <%= name %> </p>
+        <p><strong>Roll Number :</strong> <%= students[name].rollno %> </p>
+        <p><strong>Attended :</strong> <%= students[name].attended %> </p>
+        <p><strong>Absent :</strong> <%= students.delivered - students[name].attended %> </p>
+        <p><strong>Delivered :</strong> <%= students.delivered %></p>
+        <p><strong>Total Percentage :</strong> <%= students[name].percentage %> </p>
+      </div>
+
+      <div class="attendance-card">
+        <h3>Subject</h3>
+        <p><strong>Name :</strong> <%= name %> </p>
+        <p><strong>Roll Number :</strong> <%= students[name].rollno %> </p>
+        <p><strong>Attended :</strong> <%= students[name].attended %> </p>
+        <p><strong>Absent :</strong> <%= students.delivered - students[name].attended %> </p>
+        <p><strong>Delivered :</strong> <%= students.delivered %></p>
+        <p><strong>Total Percentage :</strong> <%= students[name].percentage %> </p>
+      </div> -->
+
+    <% } else { %>
+      <h2> Not Uploaded Yet !! </h2>
+    <% } %>
+    
+  </main>
+
+</body>
+</html>
