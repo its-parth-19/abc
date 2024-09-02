@@ -15,7 +15,11 @@
     <div class="auth-buttons">
       <a class="signup" href="/signUp">Sign up</a>
       <span>|</span>
-      <a class="login" href="/logIn">Login</a>
+      <%if(user) {%>
+       <a class="login" href="/logIn">Logout</a>
+      <%} else {%>
+        <a class="login" href="/logout">Login</a>
+      <%}%>
     </div>
 
   </ul>

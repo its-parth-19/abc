@@ -8,7 +8,7 @@ router.get("/attendance", (request, response) => {
 
   Admin.fetchAllStudentDetails( (students) => {
     
-    response.render("admin/attendance", {pageTitle : "Attendance", path : "/attendance", students : students});
+    response.render("admin/attendance", {pageTitle : "Attendance", path : "/admin/attendance", students : students,user:request.session.user});
     
   });
 

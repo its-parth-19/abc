@@ -54,5 +54,14 @@ module.exports = class Admin{
     });
     
   }
+  static isAuthenticated(req, res, next) {
+    if (req.session.user) {
+        console.log('Session is active:', req.session.user);
+        next();
+    } else {
+        console.log('Session expired or not present');
+        res.redirect('/login');
+    }
+}
 
 }
