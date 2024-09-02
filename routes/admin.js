@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const Admin = require("../models/admin");
+const Student = require("../models/student");
 
 router.get("/attendance", (request, response) => {
 
@@ -22,6 +23,16 @@ router.post("/attendance", (request, response) => {
     
   response.redirect("/admin/attendance");
 
+})
+
+
+router.get("/student", (request, response) => {
+
+  Student.fetchStudentAttendance( (students) => {
+
+    response.render("admin/student-info", {pageTitle : "Attendance", path : "/admin/student", students : students,user:request.session.user});
+
+  });
 })
 
 module.exports = router;

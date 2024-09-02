@@ -1,23 +1,23 @@
- {
-    "delivered": 8,
+{
+    "delivered": 9,
     "Arun": {
         "rollno": "22",
-        "attended": 8,
+        "attended": 9,
         "percentage": 100
     },
     "Varun": {
         "rollno": "23",
-        "attended": 7,
-        "percentage": 87.5
+        "attended": 8,
+        "percentage": 88.89
     },
     "Raj": {
         "rollno": "24",
-        "attended": 6,
-        "percentage": 75
+        "attended": 7,
+        "percentage": 77.78
     },
     "Rajesh": {
         "rollno": "25",
-        "attended": 8,
+        "attended": 9,
         "percentage": 100
     }
 }
