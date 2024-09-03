@@ -59,8 +59,8 @@ router.get("/signUp", (req, res) => {
 });
 //Registration route(to register a new user)
 router.post("/signUp", (req, res) => {
-    let { username, password,name } = req.body;
-    name = username;
+    let { username, password } = req.body;
+    // name = username;
     const users = getUsers();
     // Validate input
     if (username.trim() === ""|| password.trim() === "") { // if user enter only space as username and password
@@ -69,7 +69,7 @@ router.post("/signUp", (req, res) => {
     else if (users[username]) {    //if username already exists in database
         res.render("signUp.ejs", { title: "Registration", error: "Username already exists." } );
     } else {    //if username and password doesnt exists in database and username is unique
-        users[username] = { password, name };
+        users[username] = { password };
         saveUsers(users);
         res.redirect('/login');
     }
@@ -87,12 +87,12 @@ router.post("/login", (req, res) => {
     const admins = getAdmins();
 
     if (users[username] && users[username].password === password) {
-        req.session.user = { name: users[username].name, password: users[username].password };
+        req.session.user = { name: username, password: users[username].password };
         console.log(req.session.user);
         res.redirect('/');
     }
     else if(admins[username] && admins[username].password === password) {
-        req.session.user = { name: admins[username].name, username };
+        req.session.user = { name: username };
         console.log(req.session.user);
         res.redirect('/admin');
 

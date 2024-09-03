@@ -9,8 +9,6 @@
 
   <% for (let name in students) { %>
     <% if (students[name].rollno) { %>
-  <!-- <main> -->
-
    
         <div class="attendance-card">
           <ul style="list-style-type: none;">
@@ -22,9 +20,12 @@
           </ul>
         </div>
       
-  <!-- </main> -->
+    <% } %>
   <% } %>
-   <% } %>
+
+  <% if (Object.keys(students).length === 1) { %>
+    <h1>Nothing Yet !!</h1>
+  <% } %>
     
 </body>
 </html>

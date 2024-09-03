@@ -9,54 +9,38 @@
 
   <h1>Attendance</h1>
 
-    <% if (Object.keys(students).length !== 0 && students[user.name]) { %>
+  <% if (stuDetails[name]) { %>
 
+    <% const {fullname} = stuDetails[name]; %>
+
+    <% if (Object.keys(students).length !== 0 && students[fullname]) { %>
+      
       <div class="attendance-card">
         <h3>Subject</h3>
-        <p><strong>Name :</strong> <%= name %> </p>
-        <p><strong>Roll Number :</strong> <%= students[name].rollno %> </p>
-        <p><strong>Attended :</strong> <%= students[name].attended %> </p>
-        <p><strong>Absent :</strong> <%= students.delivered - students[name].attended %> </p>
+        <p><strong>Name :</strong> <%= fullname  %> </p>
+        <p><strong>Roll Number :</strong> <%= students[fullname].rollno %> </p>
+        <p><strong>Attended :</strong> <%= students[fullname].attended %> </p>
+        <p><strong>Absent :</strong> <%= students.delivered - students[fullname].attended %> </p>
         <p><strong>Delivered :</strong> <%= students.delivered %></p>
-        <p><strong>Total Percentage :</strong> <%= students[name].percentage + "%" %> </p>
+        <p><strong>Total Percentage :</strong> <%= students[fullname].percentage + "%" %> </p>
       </div>
+      
+      <% } else { %> <!-- This else will be executed when student is registered but attendance is not uploaded -->
+    
+          <div class="attendance-card">
+            <h2> Not Uploaded Yet !! </h2>
+          </div>
+    
+      <% } %>
 
-      <!-- <div class="attendance-card">
-        <h3>Subject</h3>
-        <p><strong>Name :</strong> <%= name %> </p>
-        <p><strong>Roll Number :</strong> <%= students[name].rollno %> </p>
-        <p><strong>Attended :</strong> <%= students[name].attended %> </p>
-        <p><strong>Absent :</strong> <%= students.delivered - students[name].attended %> </p>
-        <p><strong>Delivered :</strong> <%= students.delivered %></p>
-        <p><strong>Total Percentage :</strong> <%= students[name].percentage %> </p>
-      </div>
-
-      <div class="attendance-card">
-        <h3>Subject</h3>
-        <p><strong>Name :</strong> <%= name %> </p>
-        <p><strong>Roll Number :</strong> <%= students[name].rollno %> </p>
-        <p><strong>Attended :</strong> <%= students[name].attended %> </p>
-        <p><strong>Absent :</strong> <%= students.delivered - students[name].attended %> </p>
-        <p><strong>Delivered :</strong> <%= students.delivered %></p>
-        <p><strong>Total Percentage :</strong> <%= students[name].percentage %> </p>
-      </div>
-
-      <div class="attendance-card">
-        <h3>Subject</h3>
-        <p><strong>Name :</strong> <%= name %> </p>
-        <p><strong>Roll Number :</strong> <%= students[name].rollno %> </p>
-        <p><strong>Attended :</strong> <%= students[name].attended %> </p>
-        <p><strong>Absent :</strong> <%= students.delivered - students[name].attended %> </p>
-        <p><strong>Delivered :</strong> <%= students.delivered %></p>
-        <p><strong>Total Percentage :</strong> <%= students[name].percentage %> </p>
-      </div> -->
-
-    <% } else { %>
-
+    <% } else { %> <!-- This else will be executed when student is not registered and attendance is not uploaded -->
+    
       <div class="attendance-card">
         <h2> Not Uploaded Yet !! </h2>
       </div>
+
     <% } %>
+
     
 
 

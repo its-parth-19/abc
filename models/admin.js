@@ -6,7 +6,7 @@ const p2 = path.join(__dirname, "../data/attendance-list.json");
 
 module.exports = class Admin{
 
-  static fetchAllStudentDetails(callBack){
+  static fetchStudentDetails(callBack){
 
     fs.readFile(p1, (error, fileContent) => {
 
@@ -16,6 +16,18 @@ module.exports = class Admin{
 
     });
     
+  }
+
+  static fetchStudentAttendance(callBack) {
+
+    fs.readFile(p2, (error, fileContent) => {
+
+      if (!error) callBack(JSON.parse(fileContent));
+
+      else callBack({});
+
+    });
+
   }
 
   static markAttendance(name, rollno, attendance){

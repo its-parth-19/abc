@@ -1,5 +1,6 @@
 {
-    "Arun": {
+    "arun": {
+        "fullname": "Arun Kumar",
         "rollno": "22",
         "dob": "2004-03-01",
         "email": "Anonymous675z09@gmail.com",
@@ -12,7 +13,8 @@
         "state": "Punjab",
         "nat": "India"
     },
-    "Varun": {
+    "varun": {
+        "fullname": "Varun Kapoor",
         "rollno": "23",
         "dob": "2004-03-01",
         "email": "Anonymous675z09@gmail.com",
@@ -25,20 +27,8 @@
         "state": "Punjab",
         "nat": "India"
     },
-    "Raj": {
-        "rollno": "24",
-        "dob": "2004-03-01",
-        "email": "Anonymous675z09@gmail.com",
-        "mobno": "231311",
-        "gender": "Male",
-        "father": "Papa",
-        "mother": "Mummy",
-        "bldgrp": "O",
-        "city": "Ludhiana",
-        "state": "Punjab",
-        "nat": "India"
-    },
-    "Rajesh": {
+    "rajesh": {
+        "fullname": "Rajesh",
         "rollno": "25",
         "dob": "2004-03-01",
         "email": "Anonymous675z09@gmail.com",
@@ -52,7 +42,7 @@
         "nat": "India"
     },
     "gokul": {
-        "name": "gokul",
+        "fullname": "PNGokul",
         "rollno": "629",
         "dob": "2004-03-01",
         "email": "Anonymous675z09@gmail.com",

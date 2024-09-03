@@ -3,11 +3,10 @@ const express = require("express");
 const router = express.Router();
 
 const Admin = require("../models/admin");
-const Student = require("../models/student");
 
 router.get("/attendance", (request, response) => {
 
-  Admin.fetchAllStudentDetails( (students) => {
+  Admin.fetchStudentDetails( (students) => {
     
     response.render("admin/attendance", {pageTitle : "Attendance", path : "/admin/attendance", students : students,user:request.session.user});
     
@@ -28,11 +27,12 @@ router.post("/attendance", (request, response) => {
 
 router.get("/student", (request, response) => {
 
-  Student.fetchStudentAttendance( (students) => {
+  Admin.fetchStudentAttendance( (students) => {
 
-    response.render("admin/student-info", {pageTitle : "Attendance", path : "/admin/student", students : students,user:request.session.user});
+      response.render("admin/student-info", {pageTitle : "Attendance", path : "/admin/student", students : students, user:request.session.user});
 
   });
+
 })
 
 router.get("/performance", (request, response) => {

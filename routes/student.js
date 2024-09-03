@@ -34,7 +34,12 @@ router.get("/attendance/:name", (request, response) => {
 
   Student.fetchStudentAttendance( (students) => {
 
-    response.render("student/attendance", {pageTitle : "Attendance", path : "/attendance", students : students, name : name,user:request.session.user});
+    Student.fetchStudentDetails ( (stuDetails) => { // This is used to pass the student-details file info to attendance.ejs so that it can access fullname
+      
+      response.render("student/attendance", {pageTitle : "Attendance", path : "/attendance", students : students, stuDetails : stuDetails, name : name, user : request.session.user});
+    
+    });
+
 
   });
 
