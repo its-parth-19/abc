@@ -61,7 +61,7 @@ const EditProfile = () => {
         <div className="form-group">
           <label htmlFor="password">Confirm Password:</label>
           <input
-            type="password"
+            type="passwords"
             id="password"
             name="password"
             value={formData.password}
